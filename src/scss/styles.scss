@@ -1,0 +1,85 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+
+.image-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px #d8d1d1;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked + .image {
+      border: 5px solid #fb005d;
+    }
+  }
+
+  .image {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 0;
+    padding-top: 100%; 
+    border: 5px solid #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: url('../images/fullscreen.svg'); 
+      position: absolute;
+      top: 10px; 
+      left: 10px; 
+      z-index: 10;
+    }
+  }
+}
+
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row > [class^="col-"] {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-bottom: 24px; 
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-12 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+
+
+
